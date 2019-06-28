@@ -1,0 +1,46 @@
+Here is the main() test:
+-----------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include "gnl.h"
+
+int				main(void)
+{
+	char		*line = NULL;
+	int			fd = open("./srcs/gnl/gnl10.txt", O_RDONLY);
+
+	get_next_line(fd, &line);
+	close(fd);
+	sleep(15);
+	return (0);
+}
+-----------------------------
+
+
+Process:         gnl10 [9737]
+Path:            /goinfre/*/gnl10
+Load Address:    0x103a0f000
+Identifier:      gnl10
+Version:         ???
+Code Type:       X86-64
+Parent Process:  sh [9735]
+
+Date/Time:       2019-06-28 12:36:22.930 +0200
+Launch Time:     2019-06-28 12:36:17.447 +0200
+OS Version:      Mac OS X 10.14.5 (18F132)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 10.2.1 (10E1001)
+
+Physical footprint:         420K
+Physical footprint (peak):  420K
+----
+
+leaks Report Version: 4.0
+Process 9737: 161 nodes malloced for 36 KB
+Process 9737: 1 leak for 11776 total leaked bytes.
+
+    1 (11.5K) ROOT LEAK: 0x7f8bc5805800 [11776]
+
