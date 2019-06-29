@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldu-pree <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/28 09:45:06 by ldu-pree          #+#    #+#             */
-/*   Updated: 2019/06/28 09:45:33 by ldu-pree         ###   ########.fr       */
+/*   Created: 2019/06/03 11:23:05 by ldu-pree          #+#    #+#             */
+/*   Updated: 2019/06/03 16:06:45 by ldu-pree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-
-# define BUFF_SIZE 8
-# define MAX_FD 1024 + 1
-# define RET_VALUE(ret)	ret > 0 ? 1 : ret
-
-int		get_next_line(int const fd, char **line);
-
-#endif
+void	ft_memdel(void **ap)
+{
+	if (ap)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
+}

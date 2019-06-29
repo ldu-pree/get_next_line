@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldu-pree <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/28 09:45:06 by ldu-pree          #+#    #+#             */
-/*   Updated: 2019/06/28 09:45:33 by ldu-pree         ###   ########.fr       */
+/*   Created: 2019/05/27 15:33:27 by ldu-pree          #+#    #+#             */
+/*   Updated: 2019/05/27 15:42:39 by ldu-pree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	len;
 
-# define BUFF_SIZE 8
-# define MAX_FD 1024 + 1
-# define RET_VALUE(ret)	ret > 0 ? 1 : ret
-
-int		get_next_line(int const fd, char **line);
-
-#endif
+	len = ft_strlen(src);
+	ft_strncpy(dst, src, size);
+	dst[len] = '\0';
+	return (len);
+}

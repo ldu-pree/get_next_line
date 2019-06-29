@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldu-pree <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/28 09:45:06 by ldu-pree          #+#    #+#             */
-/*   Updated: 2019/06/28 09:45:33 by ldu-pree         ###   ########.fr       */
+/*   Created: 2019/05/23 17:08:49 by ldu-pree          #+#    #+#             */
+/*   Updated: 2019/05/28 10:57:15 by ldu-pree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+void	*ft_memcpy(void *restrict s1, const void *restrict s2, size_t n)
+{
+	size_t	i;
 
-# define BUFF_SIZE 8
-# define MAX_FD 1024 + 1
-# define RET_VALUE(ret)	ret > 0 ? 1 : ret
-
-int		get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	while (i < n)
+	{
+		if (s1 == '\0' && s2 == '\0')
+			break ;
+		((char*)s1)[i] = ((char*)s2)[i];
+		i++;
+	}
+	return (s1);
+}

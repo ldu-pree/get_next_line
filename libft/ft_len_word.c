@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_len_word.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldu-pree <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/28 09:45:06 by ldu-pree          #+#    #+#             */
-/*   Updated: 2019/06/28 09:45:33 by ldu-pree         ###   ########.fr       */
+/*   Created: 2019/06/18 11:36:43 by ldu-pree          #+#    #+#             */
+/*   Updated: 2019/06/18 11:48:27 by ldu-pree         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+int		ft_len_word(char const *str, char c)
+{
+	int	i;
+	int	len;
 
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-
-# define BUFF_SIZE 8
-# define MAX_FD 1024 + 1
-# define RET_VALUE(ret)	ret > 0 ? 1 : ret
-
-int		get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	len = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i] != c && str[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
